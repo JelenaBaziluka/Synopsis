@@ -1,4 +1,2 @@
 #Synopsis
-Let do it!
-#go
-gogogo
+why it is not working
