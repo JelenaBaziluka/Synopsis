@@ -8,6 +8,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegisterComponent } from './components/register/register.component';
+import {AuthService} from './services/auth.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,7 @@ import { RegisterComponent } from './components/register/register.component';
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
