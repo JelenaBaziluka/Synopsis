@@ -1,0 +1,85 @@
+<h1 class="page-header">Blog Feed!</h1>
+<!--<div class="row show-hide-message">
+  <div [ngClass]="messageClass">
+    {{message}}
+  </div>
+</div>
+-->
+
+<button type="button" name="button" class="btn btn-warning" *ngIf="!newPost" (click)="newBlogForm()">New Post</button>
+<button [disabled]="loadingBlogs" type="button" name="button" class="btn btn-default" *ngIf="!newPost" (click)="reloadBlogs()">
+  <span class="glyphicon glyphicon-repeat"></span>&nbsp;&nbsp;Reload</button>
+<br/>
+<br/>
+<!--New Blog Form-->
+<div *ngIf="!newPost">
+  <div class="panel panel-primary">
+    <!--Panel Outer Layer-->
+    <div class="panel-heading">
+      <!--Panel Title-->
+      <h3 class="panel-title">Post Title</h3>
+    </div>
+    <div class="panel-body">
+      <!--Panel Body-->
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <!--Panel Footer Start-->
+    <div class="panel-footer">
+      <strong>Posted by: </strong>jelena
+      <br/>
+      <strong>Date: </strong>May 20, 2018
+      <br/>
+      <div>
+        <strong>Likes: </strong>25
+        <br/>
+        <strong>Dislikes: </strong>22
+      </div>
+      <!-- Edit Button -->
+      <a href="#">
+        <button type="button" name="button" class="btn btn-sm btn-info">Edit</button>
+      </a>
+      <!-- Delete Button -->
+      <a href="#">
+        <button type="button" name="button" class="btn btn-sm btn-danger">Delete</button>
+      </a>
+      <!--Likes dropdown-->
+      <div class="dropdown">
+        <button type="button" name="button" class="btn btn-sm btn-success">
+          <span class="glyphicon glyphicon-thumbs-up">&nbsp;</span>Likes: 21
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Jelena</a>
+          <a href="#">Milena</a>
+          <a href="#">Sulena</a>
+        </div>
+      </div>
+      <!--Disikes dropdown-->
+      <div class="dropdown">
+        <button type="button" name="button" class="btn btn-sm btn-warning">
+          <span class="glyphicon glyphicon-thumbs-down">&nbsp;</span>Dislikes: 2
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Ludo</a>
+          <a href="#">Armin</a>
+        </div>
+      </div>
+    </div>
+    <!-- Post Comment Box: Start -->
+    <ul class="list-group">
+      <li class="list-group-item">
+        <button type="button" name="button" class="btn btn-sm btn-danger" (click)="draftComment()">Post Comment</button>
+        <br />
+        <!-- <form>
+          <textarea name="comment" rows="10" cols="30" class="form-control"></textarea>
+          <button type="button" name="button" class="btn btn-sm btn-info">Submit Post</button>
+          <button type="button" name="button" class="btn btn-sm btn-danger">Cancel</button>
+        </form> -->
+      </li>
+    </ul>
+    <!-- Post Comment Box: End -->
+
+  </div>
+</div>

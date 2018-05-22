@@ -7,12 +7,14 @@ import {LoginComponent} from '../components/login/login.component';
 import {ProfileComponent} from '../components/profile/profile.component';
 import {AuthGuard} from '../guards/auth.guard';
 import {NotAuthGuard} from '../guards/notauth.guard';
+import {BlogComponent} from '../components/blog/blog.component';
 // Our Array of Angular 2 Routes
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   { path: 'register', component: RegisterComponent, canActivate: [NotAuthGuard] },
   { path: 'login', component: LoginComponent, canActivate: [NotAuthGuard] },
+  { path: 'blog', component: BlogComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: '**', component: HomeComponent }
 
