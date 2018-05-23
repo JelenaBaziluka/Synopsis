@@ -10,11 +10,13 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegisterComponent } from './components/register/register.component';
 import {AuthService} from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
+import {BlogService} from './services/blog.service';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import {AuthGuard} from './guards/auth.guard';
 import {NotAuthGuard} from './guards/notauth.guard';
 import { BlogComponent } from './components/blog/blog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,7 @@ import { BlogComponent } from './components/blog/blog.component';
     ReactiveFormsModule,
     FlashMessagesModule.forRoot()
   ],
-  providers: [AuthService, AuthGuard, NotAuthGuard],
+  providers: [AuthService, AuthGuard, NotAuthGuard, BlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
