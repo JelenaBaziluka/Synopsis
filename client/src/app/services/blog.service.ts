@@ -3,6 +3,7 @@ import {AuthService} from './auth.service';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 
+
 @Injectable()
 export class BlogService {
   options;
@@ -26,5 +27,10 @@ newBlog(blog) {
   this.createAuthenticationHeaders();
   return this.http.post(this.domain + 'blogs/newBlog', blog, this.options)
   .map(res => res.json());
+}
+getAllBlogs() {
+this.createAuthenticationHeaders();
+return this.http.get(this.domain + 'blogs/allBlogs', this.options)
+.map(res => res.json());
 }
 }
