@@ -133,12 +133,28 @@ export class BlogComponent implements OnInit {
       this.blogPosts = data.blogs; // Assign array to use in HTML
     });
   }
+  // Function to like a blog post
+  likeBlog(id) {
+    // Service to like a blog post
+    this.blogService.likeBlog(id).subscribe(data => {
+      this.getAllBlogs(); // Refresh blogs after like
+    });
+  }
+
+// Function to disliked a blog post
+  dislikeBlog(id) {
+    // Service to dislike a blog post
+    this.blogService.dislikeBlog(id).subscribe(data => {
+      this.getAllBlogs(); // Refresh blogs after dislike
+    });
+  }
 
   ngOnInit() {
     // Get profile username on page load
     this.authService.getProfile().subscribe(profile => {
       this.username = profile.user.username; // Used when creating new blog posts and comments
     });
+
     this.getAllBlogs(); // Get all blogs on component load
   }
 }

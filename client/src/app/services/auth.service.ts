@@ -4,7 +4,6 @@ import 'rxjs/add/operator/map';
 import { tokenNotExpired } from 'angular2-jwt';
 @Injectable()
 export class AuthService {
-
   domain = 'http://localhost:8080/'; // Development Domain - Not Needed in Production
   authToken;
   user;
@@ -70,6 +69,13 @@ export class AuthService {
   getProfile() {
     this.createAuthenticationHeaders(); // Create headers before sending to API
     return this.http.get(this.domain + 'authentication/profile', this.options).map(res => res.json());
+  }
+
+  // Function to get public profile data
+  getPublicProfile(username) {
+    this.createAuthenticationHeaders(); // Create headers before sending to API
+    return this.http.get(this.domain + 'authentication/publicProfile/' + username, this.options)
+    .map(res => res.json());
   }
 
   // Function to check if user is logged in
